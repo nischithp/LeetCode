@@ -5,16 +5,60 @@ public class Solution {
 		// TODO Auto-generated constructor stub
 	}
 	
-    public static int[] smallerNumbersThanCurrent(int[] nums) {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num = 24;
+		int ans = subtractProductAndSum(num);
+		
+		
+		System.out.println("Output: "+ans);
+//		printArray(ans, ans.length);
+	}
+	
+	
+	// 1313. Decompress Run-Length Encoded List ||  Solution Performance: Time: 95.49%  Memory: 100%
+
+    public static int[] decompressRLElist(int[] nums) {
+        int[] decomArray = new int[10000]; 
+        int currAI = 0;
+        for(int i=0; i<nums.length; i=i+2){
+            int times = nums[i], number = nums[i+1],  newAI;
+            newAI = currAI + times;
+            for(int j = currAI; j< newAI; j++){
+                decomArray[j] = number;  
+            }
+            currAI = newAI;
+        }
+    int[] nums2 = Arrays.copyOf(decomArray,currAI);
+    return nums2;
+    }
+	
+	// 1281. Subtract the Product and Sum of Digits of an Integer ||  Solution Performance: Time: 100% Memory: 100%
+
+    public static int subtractProductAndSum(int n) {
+        // int[] newAr = new int[100];
+        int i=0, prod = 1, sum = 0, digit;
+        if (n == 0)
+            return 0;
+        while(n > 0){
+            digit = n%10;
+            prod = prod * digit;
+            sum+=digit;
+            n=n/10;
+        }
+        return (prod-sum);
+    }
+	
+	
+	// 1365. How Many Numbers Are Smaller Than the Current Number  ||  Solution Performance: Time: 100% Memory: 100%
+	
+    public static int[] smallerNumbersThanCurrent(int[] nums) { 
         int count=0; 
         int[] newArray = new int[10000];
         for (int i=0; i<nums.length;i++){
             int curr = nums[i];
             for(int j=0;j<nums.length;j++){
-                if(i==j){
-                    break;
-                }
-                else if(nums[j]<= curr){
+                if(nums[j] < curr){
                     count++;
                 }
             }
@@ -26,14 +70,7 @@ public class Solution {
         return a2;
     }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int[] arr = {1,2,3,4,5,5};
-		int[] ans = smallerNumbersThanCurrent(arr);
-		System.out.println("Output: ");
-		printArray(ans, ans.length);
-	}
-	
+
 	public static void printArray(int a[], int n)
 	{
 		int n1 = a.length;

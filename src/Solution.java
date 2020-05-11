@@ -16,6 +16,24 @@ public class Solution {
 	}
 	
 	
+	// 1295. Find Numbers with Even Number of Digits  ||  Solution Performance: Time: 91.94%  Memory: 100%
+
+    public int findNumbers(int[] nums) {
+        int countInside = 0, countOutside=0; 
+        for (int i=0; i<nums.length;i++){
+            countInside = 0;
+            int num = nums[i]; 
+            while(num > 0){
+                num = num/10;
+                countInside++;
+            }
+            if(countInside %2 == 0){
+                countOutside ++;
+            }            
+        }
+        return countOutside;
+    }
+	
 	// 1313. Decompress Run-Length Encoded List ||  Solution Performance: Time: 95.49%  Memory: 100%
 
     public static int[] decompressRLElist(int[] nums) {
@@ -50,7 +68,7 @@ public class Solution {
     }
 	
 	
-	// 1365. How Many Numbers Are Smaller Than the Current Number  ||  Solution Performance: Time: 100% Memory: 100%
+	// 1365. How Many Numbers Are Smaller Than the Current Number  ||  Solution Performance: Time: 49.84% Memory: 100%
 	
     public static int[] smallerNumbersThanCurrent(int[] nums) { 
         int count=0; 

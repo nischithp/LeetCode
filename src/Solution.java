@@ -16,6 +16,11 @@ public class Solution {
 	}
 	
 	
+	//1282. Group the People Given the Group Size They Belong To  ||  Solution Performance: Time: 91.94%  Memory: 100%
+	    public List<List<Integer>> groupThePeople(int[] groupSizes) {
+        
+    }
+	
 	// 1295. Find Numbers with Even Number of Digits  ||  Solution Performance: Time: 91.94%  Memory: 100%
 
     public int findNumbers(int[] nums) {

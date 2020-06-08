@@ -26,6 +26,21 @@ public class Solution {
 //    }
 //	
 	
+//	1460. Make Two Arrays Equal by Reversing Sub-arrays  ||  Solution Performance: Time: 85.58%  Memory: 97.73%
+
+    public boolean canBeEqual(int[] target, int[] arr) {
+        Arrays.sort(target);
+        Arrays.sort(arr);
+        boolean flag = true;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i] == target[i]){
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+    }
 	
 //	1464. Maximum Product of Two Elements in an Array||  Solution Performance: Time: 75.19%  Memory: 84.70%
 

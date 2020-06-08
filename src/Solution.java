@@ -1,4 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+
 public class Solution {
 
 	public Solution() {
@@ -17,10 +21,29 @@ public class Solution {
 	
 	
 	//1282. Group the People Given the Group Size They Belong To  ||  Solution Performance: Time: 91.94%  Memory: 100%
-	    public List<List<Integer>> groupThePeople(int[] groupSizes) {
+//	    public List<List<Integer>> groupThePeople(int[] groupSizes) {
+//        
+//    }
+//	
+	
+	
+//	1464. Maximum Product of Two Elements in an Array||  Solution Performance: Time: 75.19%  Memory: 84.70%
+
+	public int maxProduct(int[] nums) {
+        Arrays.sort(nums);
+        int firstMax = nums[nums.length-1], secondMax = nums[nums.length-2];
+    return ((firstMax-1)*(secondMax-1));
+    }
+
+//	1431. Kids With the Greatest Number of Candies
+
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) { 
+        List<Boolean> ans = new ArrayList<Boolean>();
+        
+		return ans;
         
     }
-	
+    
 	// 1295. Find Numbers with Even Number of Digits  ||  Solution Performance: Time: 91.94%  Memory: 100%
 
     public int findNumbers(int[] nums) {

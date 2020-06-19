@@ -26,6 +26,22 @@ public class Solution {
         }
         return nums;
     }
+    
+	// 1470. Shuffle the Array ||  Solution Performance: Time: 100%  Memory: 100%
+
+    public int[] shuffle(int[] nums, int n) {
+        int[] ar1 = new int[nums.length/2]; 
+        int[] newAr = new int[nums.length];
+        System.arraycopy(nums, n, ar1, 0, n);
+        int j=1,k=0;
+        for(int i =0; i<n; i++){
+            newAr[k] = nums[i];
+            newAr[j] = ar1[i];
+            j+=2;
+            k+=2;;
+        }
+        return newAr;
+    }
 	
 //		1282. Group the People Given the Group Size They Belong To  ||  Solution Performance: Time: 91.94%  Memory: 100%
 //	    public List<List<Integer>> groupThePeople(int[] groupSizes) {

@@ -19,8 +19,15 @@ public class Solution {
 //		printArray(ans, ans.length);
 	}
 	
+//    1480. Running Sum of 1d Array ||  Solution Performance: Time: 100%  Memory: 100%
+	public int[] runningSum(int[] nums) {
+        for (int i=1; i<nums.length;i++){
+            nums[i]+=nums[i-1];
+        }
+        return nums;
+    }
 	
-	//1282. Group the People Given the Group Size They Belong To  ||  Solution Performance: Time: 91.94%  Memory: 100%
+//		1282. Group the People Given the Group Size They Belong To  ||  Solution Performance: Time: 91.94%  Memory: 100%
 //	    public List<List<Integer>> groupThePeople(int[] groupSizes) {
 //        
 //    }

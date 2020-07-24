@@ -19,7 +19,29 @@ public class Solution {
 //		printArray(ans, ans.length);
 	}
 	
+	
+//	1431. Kids With the Greatest Number of Candies  ||  Solution Performance: Time: 63.68%(1ms)  Memory: 5.22%
 
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) { 
+        List<Boolean> ans = new ArrayList();
+        // int max = Arrays.stream(candies).max().getAsInt();
+        int max = candies[0];
+        for (int i = 1; i<candies.length; i++){
+            if(candies[i] >max)
+                max = candies[i];
+        }
+        for (int i = 0; i<candies.length; i++){
+            if (candies[i] + extraCandies >= max){
+                ans.add(true);
+            }
+            else {
+                ans.add(false);
+            }
+        }
+        return ans;
+    }
+	
+	
 //	1486. XOR Operation in an Array  ||  Solution Performance: Time: 100%  Memory: 100%
 	    public int xorOperation(int n, int start) {
 	        int[] nums = new int[n] ; 
@@ -120,14 +142,8 @@ public int maximum69Number (int num) {
     return ((firstMax-1)*(secondMax-1));
     }
 
-//	1431. Kids With the Greatest Number of Candies
 
-    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) { 
-        List<Boolean> ans = new ArrayList<Boolean>();
-        
-		return ans;
-        
-    }
+
     
 	// 1295. Find Numbers with Even Number of Digits  ||  Solution Performance: Time: 91.94%  Memory: 100%
 

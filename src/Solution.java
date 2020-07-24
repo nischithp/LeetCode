@@ -20,6 +20,24 @@ public class Solution {
 	}
 	
 	
+//	832. Flipping an Image  ||  Solution Performance: Time: 100.%(0ms)  Memory: 92.11%
+
+
+    public int[][] flipAndInvertImage(int[][] A) {
+        int[][] ans = new int[A.length][A[0].length];
+        int k = 0;
+        for (int i = 0; i<A.length; i++){
+            k = 0;
+            for (int j = A[0].length-1; j>=0; j--){
+                if (A[i][j] == 0)
+                    ans[i][k] = 1;
+                else ans[i][k] = 0;
+                k++;
+            }
+        }
+        return ans;
+    }
+    
 //	1431. Kids With the Greatest Number of Candies  ||  Solution Performance: Time: 63.68%(1ms)  Memory: 5.22%
 
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) { 

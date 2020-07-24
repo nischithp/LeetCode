@@ -19,6 +19,24 @@ public class Solution {
 //		printArray(ans, ans.length);
 	}
 	
+
+//	1486. XOR Operation in an Array  ||  Solution Performance: Time: 100%  Memory: 100%
+	    public int xorOperation(int n, int start) {
+	        int[] nums = new int[n] ; 
+	        int xor = n;
+	        for(int i=0; i<n ; i++){
+	            nums[i] = start + (2*i);
+	            if (i == 0){
+	                xor = nums[i];
+	            }
+	            else {
+	                xor = xor ^ nums[i];
+	            }
+	        } 
+	        return xor;
+	    }
+
+	
 //    1480. Running Sum of 1d Array ||  Solution Performance: Time: 100%  Memory: 100%
 	public int[] runningSum(int[] nums) {
         for (int i=1; i<nums.length;i++){

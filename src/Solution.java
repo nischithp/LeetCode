@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 
 public class Solution {
@@ -11,15 +13,51 @@ public class Solution {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int num = 24;
-		int ans = subtractProductAndSum(num);
+
 		
-		
-		System.out.println("Output: "+ans);
-//		printArray(ans, ans.length);
+		//		printArray(ans, ans.length);
 	}
 	
-	
+//	 * Definition for a binary tree node.
+	  public class TreeNode {
+	      int val;
+	      TreeNode left;
+	     TreeNode right;
+	      TreeNode() {}
+	      TreeNode(int val) { this.val = val; }
+	      TreeNode(int val, TreeNode left, TreeNode right) {
+	          this.val = val;
+	          this.left = left;
+	          this.right = right;
+	      }
+	  }
+	  
+	    public int rangeSumBST(TreeNode root, int L, int R) {
+	        int val = root.val;
+	        int sum = 0;
+	        if (root== null)
+	        	return sum;
+	        
+	        Queue<TreeNode>  q = new LinkedList<>();
+	        q.add(root);
+
+	    	while(!q.isEmpty()){
+
+                TreeNode current = q.remove();
+                // getting the sum by checking for the given range
+	            if (current.val>=L && current.val<=R){
+                    sum+=current.val;
+                }
+                
+                //checking to see which direction to move the traversal in 
+                if (current.val >= L && current.left != null)
+                    q.add(current.left);
+                if (current.val <= R && current.right != null)
+                    q.add(current.right);
+            }
+	        return sum;
+    }
+	  
 //	832. Flipping an Image  ||  Solution Performance: Time: 100.%(0ms)  Memory: 92.11%
 
 

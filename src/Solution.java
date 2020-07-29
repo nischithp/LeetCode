@@ -18,6 +18,15 @@ public class Solution {
 		//		printArray(ans, ans.length);
 	}
 	
+//	344. Reverse String ||  Solution Performance: Time: 62.78%(1ms)  Memory: 5.03%
+    public void reverseString(char[] s) {
+        for(int i = 0; i < s.length/2; i++){
+            char temp = s[i];
+            s[i] = s[s.length-1-i];
+            s[s.length-1-i] = temp;
+        }
+    }
+	
 //	 * Definition for a binary tree node.
 	  public class TreeNode {
 	      int val;

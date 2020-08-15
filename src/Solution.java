@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
+import java.util.*;
 
 public class Solution {
 
@@ -18,6 +18,42 @@ public class Solution {
 		//		printArray(ans, ans.length);
 	}
 	
+//	242. Valid Anagram ||  Solution Performance: Time: 5.03% (68ms) Memory: 5.03%
+    public boolean isAnagram(String s, String t) {
+        Dictionary ans = new Hashtable();
+        Dictionary cmp = new Hashtable();
+        
+        String[] str = s.split("");
+        String[] tr = t.split("");
+        
+        for (int i = 0; i<str.length;i++){
+            if(ans.get(str[i]) == null){
+                ans.put(str[i],1);
+            }
+            else if(ans.get(str[i]) != null) {
+                int count = Integer.parseInt(ans.get(str[i]).toString());
+                count++;
+                ans.put(str[i],count);
+            }
+        }
+        
+        for (int i = 0; i<tr.length;i++){
+            if(cmp.get(tr[i]) == null){
+                cmp.put(tr[i],1);
+            }
+            else if(cmp.get(tr[i]) != null) {
+                int count = Integer.parseInt(cmp.get(tr[i]).toString());
+                count++;
+                cmp.put(tr[i],count);
+            }
+        }
+        
+        Boolean flag = false;
+        if(ans.equals(cmp))
+            flag = true;
+        return flag;
+    }
+    
 //	344. Reverse String ||  Solution Performance: Time: 62.78%(1ms)  Memory: 5.03%
     public void reverseString(char[] s) {
         for(int i = 0; i < s.length/2; i++){

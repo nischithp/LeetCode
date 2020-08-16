@@ -18,6 +18,22 @@ public class Solution {
 		//		printArray(ans, ans.length);
 	}
 	
+//	217. Contains Duplicate  ||  Solution Performance: Time: 38.85% (8ms) Memory: 44.99%
+    public boolean containsDuplicate(int[] nums) {
+        Dictionary dup = new Hashtable();
+        
+        for(int i=0; i<nums.length; i++){
+            if(dup.get(nums[i]) == null){
+                dup.put(nums[i],1);
+            }
+            else if(dup.get(nums[i]) != null){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    
 //	242. Valid Anagram ||  Solution Performance: Time: 5.03% (68ms) Memory: 5.03%
     public boolean isAnagram(String s, String t) {
         Dictionary ans = new Hashtable();

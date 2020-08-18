@@ -18,6 +18,29 @@ public class Solution {
 		//		printArray(ans, ans.length);
 	}
 	
+	// 1. Two Sum ||  Solution Performance: Time: 5% (142ms) Memory: 71.37%
+    public int[] twoSum(int[] nums, int target) {
+
+        List<Integer> num = new ArrayList<>();
+        
+        for(int i=0; i<nums.length;i++){
+            for(int j=i+1;j<nums.length;j++){
+                if((nums[i]+nums[j]) == target){
+                    if(!num.contains(i)){
+                        num.add(i);
+                    }
+                    
+                    if(!num.contains(j)){
+                        num.add(j);
+                    }
+                }
+            }
+        }
+        int[] array = num.stream().mapToInt(i->i).toArray();
+
+        return array;
+    }
+	
 //	217. Contains Duplicate  ||  Solution Performance: Time: 38.85% (8ms) Memory: 44.99%
     public boolean containsDuplicate(int[] nums) {
         Dictionary dup = new Hashtable();

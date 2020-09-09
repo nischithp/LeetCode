@@ -18,6 +18,15 @@ public class Solution {
 		//		printArray(ans, ans.length);
 	}
 	
+//	977. Squares of a Sorted Array || Solution Performance: Time: 75.67% (2ms) Memory: 96.25% (40.8MB)
+    public int[] sortedSquares(int[] A) {
+        for(int i= 0; i<A.length; i++){
+            A[i] = A[i] * A[i];
+        } 
+        Arrays.sort(A);
+        return A;
+    }
+	
 	// 1. Two Sum ||  Solution Performance: Time: 5% (142ms) Memory: 71.37%
     public int[] twoSum(int[] nums, int target) {
 
